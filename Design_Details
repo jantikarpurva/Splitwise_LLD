@@ -1,0 +1,39 @@
+Entities
+----------
+
+1) User - Name, Phone no, Password, List<Group>, List<Expense>
+2) Group - Name, Description, createdDate, groupAdmin, List<User> participants
+3) Expense - Name, Description, createdDate, createdBy, List<User> participants
+
+Relationships
+--------------
+
+With user entity
+
+1) User - Expense
+
+user creates multiple expense, expense is created by 1 user.
+Or user can own multiple expense, expense is owned by only 1 user
+1:m
+
+user can be part of multiple expense, expense can belong to multiple user
+user can be a participant in multiple expenses, expense can belong to multiple user
+m:m
+
+2) User - Group
+
+user can create multiple groups, but a group is created by only one user
+user can own multiple groups, but a group is owned by a single user
+1:m
+
+user can be part of multiple group, group can have or belong to multiple users
+m:m
+
+3) Expense - Group
+
+Expense can belong to at most 1 group ( i.e it can either belong to 1 group or no group ), Group can have multiple expenses.
+Group can have many expense, expense can belong to 1/0 group
+m:1
+
+
+
